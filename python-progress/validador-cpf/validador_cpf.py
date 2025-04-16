@@ -53,5 +53,9 @@ for numero in numeros_multiplicados_2:
 verifica_resto_2 = (soma_multiplicados_2 * 10) % 11
 segundo_digito = 0 if verifica_resto_2 >= 10 else verifica_resto_2
 
-print("Dígitos verificadores:", primeiro_digito, segundo_digito)
-print("CPF completo:", cpf[:12] + f"{primeiro_digito}{segundo_digito}")
+cpf_formatado = f"{cpf[0:11]}-{primeiro_digito}{segundo_digito}"
+
+if cpf_formatado == cpf:
+    print("Seu CPF é válido.")
+else:
+    print("Seu CPF é inválido.")
