@@ -1,3 +1,12 @@
+"""
+Sobre a parte mais hardcode em pega_numeros_1:
+    O professor tinha dito para não utilizarmos os CPFs com '.' e '-' de primeira.
+    Porém, se quisessemos, poderíamos tentar criar dessa forma. Olhando depois percebi
+    que poderia ter utilizado o método .replace() o que tornaria bem mais fácil, porém,
+    preferi deixar dessa forma mais bruta, acredito mostrar mais da minha evolução
+    conforme o tempo for passando
+"""
+
 # cpf usuário
 cpf = "096.927.000-38"
 pega_numeros_1 = cpf[0:11].split(".")
