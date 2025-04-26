@@ -3,34 +3,33 @@ Lista de Compras Simples
 """
 
 
-# lista a ser trabalhada
-lista_compras = []
+shopping_list = []
 
 # loop para exibir opções ao usuário
 while True:
     print("Selecione uma opção")
-    opcao_usuario = input("[i]nserir [a]pagar [l]istar [s]air: ")
+    user_option = input("[i]nserir [a]pagar [l]istar [s]air: ")
     
     
-    if opcao_usuario == "i":
+    if user_option == "i":
         # adiciona um item na lista
-        usuario_adiciona = input("\nItem: ").lower()
+        add_item = input("\nItem: ").lower()
         
         # verifica se é um texto vazio, se não for, adiciona o item
-        if usuario_adiciona == "":
+        if add_item == "":
             print("Por favor, digite algo.")
             continue
         else:
-            lista_compras.append(usuario_adiciona)
+            shopping_list.append(add_item)
             print("Item adicionado com sucesso!\n\n")
-    elif opcao_usuario == "a":
+    elif user_option == "a":
         # apaga o elemento no índice informado
-        indice_exclusao = input("\nDigite o índice: ")
+        deletion_index = input("\nDigite o índice: ")
 
         # tratamento de erros caso o usuário não digite um índice
         try:
-            indice_exclusao = int(indice_exclusao)
-            lista_compras.pop(indice_exclusao)
+            deletion_index = int(deletion_index)
+            shopping_list.pop(deletion_index)
             print("Item excluído com sucesso.\n\n")
         except ValueError:
             print("Por favor, utilize apenas índices numéricos.\n\n")
@@ -43,18 +42,18 @@ while True:
             continue
 
         continue
-    elif opcao_usuario == "l":
+    elif user_option == "l":
         # exibe os itens da lista  
-        enumera_itens = enumerate(lista_compras)
+        enumerate_itens = enumerate(shopping_list)
 
         # loop para exibir os nomes com índices
         print(end="\n\n")
-        for indice, nome in enumera_itens:
-            nome_maiusculo = str(nome).capitalize()
-            print(f"{indice} - {nome_maiusculo}")
+        for index, name in enumerate_itens:
+            uppercase_name = str(name).capitalize()
+            print(f"{index} - {uppercase_name}")
         print(end="\n\n")
         continue
-    elif opcao_usuario == "s":
+    elif user_option == "s":
         # sai do loop de opções do usuário
         print("Saindo...")
         break
